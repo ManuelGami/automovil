@@ -12,6 +12,7 @@ namespace automoviles
         private string marca;
         private float precio;
         private float velocidad;
+        
 
         public float Velocidad
         {
@@ -39,7 +40,23 @@ namespace automoviles
             Console.WriteLine("\n");
             return marca;
         }
-        public string
+        public void acelarar()
+        {
+            Console.WriteLine("estas llendo a {0}", velocidad);
+            Console.WriteLine("a que velocidad quieres llegar en km/hr ");
+            float VF = float.Parse(Console.ReadLine());
+            Console.WriteLine("en cuanto tiempo quieres llegar a {0} en segundos", VF);
+            float t = float.Parse(Console.ReadLine());
+            Console.WriteLine("tienes que acelar a {0} kh/s^2", (VF-velocidad)/t);
+        }
+        public void frenar()
+        {
+            Console.WriteLine("estas llendo a {0}", velocidad);
+            Console.WriteLine("en cuanto tiempo quieres frenar");
+            float t = float.Parse(Console.ReadLine());
+            Console.WriteLine("tienes que desacelerar a {0} kh/s^2 para frenar en el tiempo deseado", (0 - velocidad) / t);
+        }
+
         #endregion
         
     }
